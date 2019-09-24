@@ -4,4 +4,4 @@
 
 # 第一课 - 源代码管理/版本管理
 
-<a target="_blank" href="./classes/1.1_git.md">了解Git</a>
+[了解Git](./classes/1.1_git.md)
