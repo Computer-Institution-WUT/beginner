@@ -3,7 +3,7 @@
 
 本教程着重于“从实践入手，逐步了解C语言运作方法”，并起到抛砖引玉的效果，将各位初学者引入C语言学习的世界。
 
-## Step 0x00 Simplest C programming code
+## Step 0x00 Simplest C code
 
 首先我们先来看一个最简单的样例程序：
 
@@ -44,7 +44,7 @@ main函数具备了所有函数应该具备的所有素质，包括函数返回�
 
 本节到此结束，感兴趣的同学可以在自己的IDE(Integrated Development Environment, 集成开发环境)或者编辑器中编写代码，并使用编译器编译运行观察系统执行的行为(如果是Windows系统建议在cmd中调用编译好的程序，或者使用dev-cpp or codeblocks这类会在退出处暂停的IDE)。
 
-## Step 0x01 I Want to Output Some Thing
+## Step 0x01 Output Some Thing
 
 有的同学说了，一个这样的程序能干嘛？
 回答当然是：当然啥都干不了！但是现在教你打印一点东西在屏幕上，嘻嘻~
@@ -109,4 +109,48 @@ int main()
 
 这节就到此为止啦，希望小伙伴们可以多多查找关于printf函数的资料，充分理解此函数是如何使用的，然后魔改样例代码，实现自己想要实现的程序吧~
 
+一些可供阅读的参考资料：
+
+[菜鸟教程 - printf()](https://www.runoob.com/cprogramming/c-function-printf.html)
+
+[printf - C++ Reference](http://www.cplusplus.com/reference/cstdio/printf/)
+
+[格式化字符串 - 维基百科](https://zh.wikipedia.org/wiki/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2)
+
+## Step 0x02 Get Some Thing
+
+小伙伴们在试过往屏幕打印东西之后，也有了想要从屏幕获取数据的愿望吧？
+那么，本节主要讲解刚刚说到的`scanf`函数。
+
+scanf，顾名思义，就是扫描的意思，在屏幕上扫描内容并且读取进程序。
+多说无益，来看样例~！
+
+```c
+#include <stdio.h>
+int main()
+{
+    int i;
+    double d;
+    printf("input an integer: ");
+    scanf("%d", &i);
+    printf("input a double: ");
+    scanf("%lf", &d);
+    printf("input end!\nthe integer i = %d\n", i);
+    printf("the double d = %lf\n", d);
+    return 0;
+}
+```
+
+经过前两节洗礼的同学，这次在看到这段代码的时候，应该大概可以看明白scanf这个函数具体是用来做什么的了吧~
+
+可以看出来，`scanf("%d", &i);`和`scanf("%lf", &d);`两条语句分别读取了两个数字分别存在i和d变量里头。这里和printf稍微有点不一样的是，在参数表里面的变量，在scanf中，需要在变量前面加上"&"号，这个符号是"取地址符"，即`&i`为`i`在地址中的具体位置。为什么要传入地址呢，因为scanf会改变变量的值，只有传入了地址，才能在函数中实现对参数的值的改变，不然函数接收到的永远都只是变量在内存中的拷贝量，而无法对其本身进行改动。
+
+参考资料：
+
+[菜鸟教程 - scanf](https://www.runoob.com/cprogramming/c-function-scanf.html)
+
+[scanf - C++ Reference](http://www.cplusplus.com/reference/cstdio/scanf/)
+
 ---
+
+未完待续...
